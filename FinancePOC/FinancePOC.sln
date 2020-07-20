@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FinancePOC.UI", "FinancePOC.UI", "{5F28755D-830F-4E05-97EA-9808B2890760}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FinancePOC.Infra.Data", "FinancePOC.Infra.Data", "{DCAE86BA-973A-4033-A57B-FA1785F187A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FinancePOC.Api", "FinancePOC.Api", "{A020FD89-F41D-4973-8A13-58E7DDC8D352}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FinancePOC.Application", "FinancePOC.Application", "{8D67D7B6-7892-42E9-AD16-A041858A94DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FinancePOC.Domain", "FinancePOC.Domain", "{5957C1D1-43F6-4300-BD87-A8C615D89FAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FinancePOC.Domain.Core", "FinancePOC.Domain.Core", "{7E5FE616-5FF7-431C-BC6D-12DC8BDB82A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FinancePOC.Infra.Bus", "FinancePOC.Infra.Bus", "{BDAD3460-2424-4761-83EB-03D78A6A57A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FinancePOC.IoC", "FinancePOC.IoC", "{862762E6-D1B1-4DEF-99CC-E5A05D7A29AD}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4BDBAF6-510B-4E4C-9231-A541FD05ECE5}
+	EndGlobalSection
+EndGlobal

@@ -37,11 +37,16 @@ namespace FinancePOC.Api.Controllers
         }
 
 
-        //Get : api/FinanceDetail/
+        //Get : /Finance
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Finances>>> GetFinances()
         {
-            return await _context.Finances.ToListAsync();
+            var financeDetail = await _context.Finances.ToListAsync();
+            if (financeDetail == null)
+            {
+                return NotFound();
+            }
+            return financeDetail;
         }
     }
 }

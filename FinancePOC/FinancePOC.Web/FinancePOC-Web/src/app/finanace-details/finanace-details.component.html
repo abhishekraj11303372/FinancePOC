@@ -1,0 +1,14 @@
+<h1 class="display-4 text-center">Finance Security List</h1>
+<hr />
+<div>
+  List :
+  <table class="table table-hover">
+    <tr *ngFor="let fd of service.list">
+      <td>{{ fd.PMId }}</td>
+      <td>{{ fd.LoanHolderName }}</td>
+      <td>{{ fd.LoanType }}</td>
+      <td>{{ fd.LoanDate }}</td>
+      <td>{{ fd.InsuranceDate }}</td>
+    </tr>
+  </table>
+</div>

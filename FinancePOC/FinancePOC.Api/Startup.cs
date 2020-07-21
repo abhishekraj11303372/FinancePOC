@@ -44,6 +44,7 @@ namespace FinancePOC.Api
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Finance Api", Version = "v1" });
             });
 
+            services.AddCors();
             services.AddMediatR(typeof(Startup));
 
             services.RegisterAutoMapper();
@@ -67,6 +68,10 @@ namespace FinancePOC.Api
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Finance Api v1");
             });
 
+            app.UseCors(options => 
+            options.WithOrigins("http://localhost:4200")
+            .AllowAnyMethod()
+            .AllowAnyHeader());
             app.UseRouting();
 
             app.UseAuthorization();

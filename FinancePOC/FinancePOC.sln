@@ -17,21 +17,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.Bus", "Infra.Bus", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoC", "IoC", "{862762E6-D1B1-4DEF-99CC-E5A05D7A29AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancePOC.UI.WebPortal", "FinancePOC.UI.WebPortal\FinancePOC.UI.WebPortal.csproj", "{21D69217-710E-453B-B0FC-D430C738CE43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancePOC.UI.WebPortal", "FinancePOC.UI.WebPortal\FinancePOC.UI.WebPortal.csproj", "{21D69217-710E-453B-B0FC-D430C738CE43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancePOC.Domain", "FinacePOC.Domain\FinancePOC.Domain.csproj", "{D14B2CBE-AA20-41E0-AC68-A55517067915}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancePOC.Domain", "FinacePOC.Domain\FinancePOC.Domain.csproj", "{D14B2CBE-AA20-41E0-AC68-A55517067915}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finance.Infra.Data", "FinanceDBContext\Finance.Infra.Data.csproj", "{C345EA69-E7FC-4D36-B3BD-884B78A212FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finance.Infra.Data", "FinanceDBContext\Finance.Infra.Data.csproj", "{C345EA69-E7FC-4D36-B3BD-884B78A212FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancePOC.Api", "FinancePOC.Api\FinancePOC.Api.csproj", "{58641908-78ED-4EFB-959E-87C73AB1D532}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancePOC.Api", "FinancePOC.Api\FinancePOC.Api.csproj", "{58641908-78ED-4EFB-959E-87C73AB1D532}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancePOC.Application", "FinancePOC.Application\FinancePOC.Application.csproj", "{5550FD64-FCC8-48F5-89DE-6A116FEA05F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancePOC.Application", "FinancePOC.Application\FinancePOC.Application.csproj", "{5550FD64-FCC8-48F5-89DE-6A116FEA05F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancePOC.Infra.IoC", "DependencyContainer\FinancePOC.Infra.IoC.csproj", "{85772C8C-212D-44E6-9142-7624F9867815}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancePOC.Infra.IoC", "DependencyContainer\FinancePOC.Infra.IoC.csproj", "{85772C8C-212D-44E6-9142-7624F9867815}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancePOC.Infra.Bus", "InMemoryBus\FinancePOC.Infra.Bus.csproj", "{3F17C4B9-C52D-471B-BF71-6549A461651A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancePOC.Infra.Bus", "InMemoryBus\FinancePOC.Infra.Bus.csproj", "{3F17C4B9-C52D-471B-BF71-6549A461651A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanacePOC.Domain.Core", "FinanacePOC.Domain.Core\FinanacePOC.Domain.Core.csproj", "{0B9DA956-7A35-4ABA-9234-73C55C4EF667}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanacePOC.Domain.Core", "FinanacePOC.Domain.Core\FinanacePOC.Domain.Core.csproj", "{0B9DA956-7A35-4ABA-9234-73C55C4EF667}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

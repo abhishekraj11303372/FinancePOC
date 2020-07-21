@@ -8,6 +8,7 @@
     <ProjectReference Include="..\FinacePOC.Domain\FinancePOC.Domain.csproj" />
     <ProjectReference Include="..\FinanceDBContext\Finance.Infra.Data.csproj" />
     <ProjectReference Include="..\FinancePOC.Application\FinancePOC.Application.csproj" />
+    <ProjectReference Include="..\InMemoryBus\FinancePOC.Infra.Bus.csproj" />
   </ItemGroup>
 
 </Project>

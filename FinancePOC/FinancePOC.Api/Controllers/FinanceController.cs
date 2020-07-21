@@ -1,5 +1,8 @@
-﻿using FinancePOC.Application.Interfaces;
+﻿using Finance.Infra.Data.Context;
+using FinancePOC.Application.Interfaces;
+using FinancePOC.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +14,34 @@ namespace FinancePOC.Api.Controllers
     [Route("[controller]")]
     public class FinanceController : ControllerBase
     {
-        private readonly IFinanceService _financeService;
+        //private readonly IFinanceService _financeService;
 
-        public FinanceController(IFinanceService financeService)
+        //public FinanceController(IFinanceService financeService)
+        //{
+        //    _financeService = financeService;
+        //}
+
+        //[HttpPost]
+        //public IActionResult Post([FromBody] FinanceViewModel financeViewModel)
+        //{
+        //    _financeService.Create(financeViewModel);
+
+        //    return Ok(financeViewModel);
+        //}
+
+        private readonly FinanceDBContext _context;
+
+        public FinanceController(FinanceDBContext context)
         {
-            _financeService = financeService;
+            _context = context;
         }
 
+
+        //Get : api/FinanceDetail/
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Finances>>> GetFinances()
+        {
+            return await _context.Finances.ToListAsync();
+        }
     }
 }

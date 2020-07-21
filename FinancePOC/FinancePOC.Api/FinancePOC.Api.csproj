@@ -9,9 +9,12 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
     <PackageReference Include="MediatR" Version="8.0.2" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DependencyContainer\FinancePOC.Infra.IoC.csproj" />
+    <ProjectReference Include="..\FinanceDBContext\Finance.Infra.Data.csproj" />
     <ProjectReference Include="..\FinancePOC.Application\FinancePOC.Application.csproj" />
   </ItemGroup>
 

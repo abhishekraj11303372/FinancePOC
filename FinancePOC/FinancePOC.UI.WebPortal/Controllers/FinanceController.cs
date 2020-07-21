@@ -18,12 +18,5 @@ namespace FinancePOC.UI.WebPortal.Controllers
         {
             _context = context;
         }
-
-        //Get : api/FinanceDetail/
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Finances>>> GetFinances()
-        {
-            return await _context.Finances.ToListAsync();
-        }
     }
 }

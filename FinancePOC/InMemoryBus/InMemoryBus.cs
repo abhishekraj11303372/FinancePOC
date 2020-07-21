@@ -4,7 +4,7 @@ using MediatR;
 using System;
 using System.Threading.Tasks;
 
-namespace InMemoryBus
+namespace FinancePOC.Infra.Bus
 {
     public sealed class InMemoryBus : IMediatorHandler
     {

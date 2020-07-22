@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FinanaceDetailsService } from "../shared/finanace-details.service";
+import { FinanaceDetails } from '../shared/finanace-details.model';
 
 @Component({
   selector: "app-finanace-details",
@@ -11,5 +12,9 @@ export class FinanaceDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.service.refreshList();
+  }
+
+  populateForm(fd:FinanaceDetails){
+    this.service.formdata = fd;
   }
 }

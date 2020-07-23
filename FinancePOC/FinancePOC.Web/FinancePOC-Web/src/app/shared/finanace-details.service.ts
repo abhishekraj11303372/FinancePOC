@@ -19,3 +19,5 @@ export class FinanaceDetailsService {
       .then(res => this.list = res as FinanaceDetails[]);
   }
 }
+
+

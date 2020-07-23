@@ -2,7 +2,7 @@
 
 namespace Finance.Infra.Data.Migrations
 {
-    public partial class IntialCreate : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

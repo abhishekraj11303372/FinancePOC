@@ -37,7 +37,13 @@ namespace FinancePOC.Api
                     Configuration.GetConnectionString("FinanceDbConnection"));
             });
 
-            services.AddControllers();
+            //services.AddControllers();
+
+            services.AddMvc().AddJsonOptions(o =>
+            {
+                o.JsonSerializerOptions.PropertyNamingPolicy = null;
+                o.JsonSerializerOptions.DictionaryKeyPolicy = null;
+            });
 
             services.AddSwaggerGen(c =>
             {

@@ -29,6 +29,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancePOC.Infra.Bus", "InM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanacePOC.Domain.Core", "FinanacePOC.Domain.Core\FinanacePOC.Domain.Core.csproj", "{0B9DA956-7A35-4ABA-9234-73C55C4EF667}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RTFStorage", "RTFStorage", "{832BEEF3-7CCB-48B1-9378-B845B95C6922}"
+	ProjectSection(SolutionItems) = preProject
+		Finance.RTFStorage\Certificate.rtf = Finance.RTFStorage\Certificate.rtf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -13,6 +13,6 @@ namespace Finance.Infra.Data.Context
 
         }
 
-        public DbSet<Finances> Finances { get; set; }
+        public virtual DbSet<Finances> Finances { get; set; }
     }
 }

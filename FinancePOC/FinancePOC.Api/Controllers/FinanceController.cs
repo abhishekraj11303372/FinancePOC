@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace FinancePOC.Api.Controllers
@@ -14,7 +15,7 @@ namespace FinancePOC.Api.Controllers
     [Route("[controller]")]
     public class FinanceController : ControllerBase
     {
-        //private readonly IFinanceService _financeService;
+        private readonly IFinanceService _financeService;
 
         //public FinanceController(IFinanceService financeService)
         //{
@@ -29,24 +30,40 @@ namespace FinancePOC.Api.Controllers
         //    return Ok(financeViewModel);
         //}
 
-        private readonly FinanceDBContext _context;
+        //private readonly FinanceDBContext _context;
 
-        public FinanceController(FinanceDBContext context)
+        //public FinanceController(FinanceDBContext context)
+        //{
+        //    _context = context;
+        //}
+
+        public FinanceController(IFinanceService financeService)
         {
-            _context = context;
+            _financeService = financeService;
         }
-
 
         //Get : /Finance
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Finances>>> GetFinances()
+        public IActionResult GetFinances()
         {
-            var financeDetail = await _context.Finances.ToListAsync();
+            var financeDetail = _financeService.GetFinances();
             if (financeDetail == null)
             {
                 return NotFound();
             }
-            return financeDetail;
+            return StatusCode((int)HttpStatusCode.OK, financeDetail);
         }
+
+        ////Get : /Finance
+        //[HttpGet]
+        //public async Task<ActionResult<IEnumerable<Finances>>> GetFinances()
+        //{
+        //    var financeDetail = await _context.Finances.ToListAsync();
+        //    if (financeDetail == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return financeDetail;
+        //}
     }
 }

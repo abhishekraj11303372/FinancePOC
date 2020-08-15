@@ -5,10 +5,12 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { FinanaceDetailsComponent } from "./finanace-details/finanace-details.component";
 import { FinanaceDetailsService } from "./shared/finanace-details.service";
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { ViewerComponent } from './viewer/viewer.component';
 
 @NgModule({
-  declarations: [AppComponent, FinanaceDetailsComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [AppComponent, FinanaceDetailsComponent, ViewerComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CKEditorModule],
   providers: [FinanaceDetailsService],
   bootstrap: [AppComponent],
 })

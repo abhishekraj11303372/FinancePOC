@@ -30,9 +30,5 @@
     <None Include="wwwroot\uploads\Screenshot %281%29.png" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="uploads\" />
-  </ItemGroup>
-
 
 </Project>

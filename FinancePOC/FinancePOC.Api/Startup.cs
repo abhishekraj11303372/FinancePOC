@@ -57,11 +57,11 @@ namespace FinancePOC.Api
             services.AddCors();
             services.AddMediatR(typeof(Startup));
 
-            services.Configure<FormOptions>(o => {
-                o.ValueLengthLimit = int.MaxValue;
-                o.MultipartBodyLengthLimit = int.MaxValue;
-                o.MemoryBufferThreshold = int.MaxValue;
-            });
+            //services.Configure<FormOptions>(o => {
+            //    o.ValueLengthLimit = int.MaxValue;
+            //    o.MultipartBodyLengthLimit = int.MaxValue;
+            //    o.MemoryBufferThreshold = int.MaxValue;
+            //});
 
             services.RegisterAutoMapper();
 
@@ -89,12 +89,12 @@ namespace FinancePOC.Api
             .AllowAnyMethod()
             .AllowAnyHeader());
 
-            app.UseStaticFiles();
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"uploads")),
-                RequestPath = new PathString("/uploads")
-            });
+            //app.UseStaticFiles();
+            //app.UseStaticFiles(new StaticFileOptions()
+            //{
+            //    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"uploads")),
+            //    RequestPath = new PathString("/uploads")
+            //});
 
             app.UseRouting();
 

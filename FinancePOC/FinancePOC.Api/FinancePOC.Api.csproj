@@ -10,6 +10,7 @@
     <PackageReference Include="MediatR" Version="8.0.2" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.6">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -21,6 +22,16 @@
     <ProjectReference Include="..\DependencyContainer\FinancePOC.Infra.IoC.csproj" />
     <ProjectReference Include="..\FinanceDBContext\Finance.Infra.Data.csproj" />
     <ProjectReference Include="..\FinancePOC.Application\FinancePOC.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\uploads\FinancePOCDotnetMembers-DOC.docx" />
+    <None Include="wwwroot\uploads\FinancePOCDotnetMembers-RTF.rtf" />
+    <None Include="wwwroot\uploads\Screenshot %281%29.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="uploads\" />
   </ItemGroup>
 
 

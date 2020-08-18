@@ -9,6 +9,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 export class ViewerComponent implements OnInit {
 
   public Editor = ClassicEditor ;
+  public editorData = "<p>Hello world!</p>" ;
   constructor() { }
 
   ngOnInit() {

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
+import { UploadAdapter } from '../shared/uploadadapter';
 
 @Component({
   selector: 'app-viewer',
@@ -36,4 +37,10 @@ export class ViewerComponent implements OnInit {
   ngOnInit() {
   }
 
+  onReady(eventData) {
+    eventData.plugins.get('FileRepository').createUploadAdapter = function (loader) {
+      console.log(btoa(loader.file));
+      return new UploadAdapter(loader);
+    };
+  }
 }

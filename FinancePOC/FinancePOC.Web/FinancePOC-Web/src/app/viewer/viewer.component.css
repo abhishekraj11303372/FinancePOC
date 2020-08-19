@@ -1,0 +1,13 @@
+#file {
+    border: none;
+    color: white;
+    padding: 0;
+    cursor: pointer;
+    font-size: 12px;
+    background-color: #3CBC8D;
+  }
+  
+  /* Darker background on mouse-over */
+  #file:hover {
+    background-color: RoyalBlue;
+  }

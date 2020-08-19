@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { PdfViewerComponent } from 'ng2-pdf-viewer';
 
 @Component({
   selector: 'app-viewer',
@@ -7,10 +8,30 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
   styleUrls: ['./viewer.component.css']
 })
 export class ViewerComponent implements OnInit {
+  @ViewChild(PdfViewerComponent, {static:false}) private pdfComponent: PdfViewerComponent;
+  pdfSrc: any;
 
+  search(stringToSearch: string) {
+    this.pdfComponent.pdfFindController.executeCommand('find', {
+      caseSensitive: false, findPrevious: undefined, highlightAll: true, phraseSearch: true, query: stringToSearch
+    });
+  }
   public Editor = ClassicEditor ;
   public editorData = "<p>Hello world!</p>" ;
   constructor() { }
+  onFileSelected() {
+    let $img: any = document.querySelector('#file');
+  
+    if (typeof (FileReader) !== 'undefined') {
+      let reader = new FileReader();
+  
+      reader.onload = (e: any) => {
+        this.pdfSrc = e.target.result;
+      };
+  
+      reader.readAsArrayBuffer($img.files[0]);
+    }
+  }
 
   ngOnInit() {
   }

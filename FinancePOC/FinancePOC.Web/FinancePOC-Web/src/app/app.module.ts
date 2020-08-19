@@ -11,14 +11,18 @@ import { UploadcomponentComponent } from './uploadcomponent/uploadcomponent.comp
 import { DownloadcomponentComponent } from './downloadcomponent/downloadcomponent.component';
 import { FilemanagerComponent } from './filemanager/filemanager.component';
 import { UploadDownloadServiceService } from './shared/upload-download-service.service';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
 
 @NgModule({
   declarations: [AppComponent,
      FinanaceDetailsComponent,
       ViewerComponent, UploadcomponentComponent, 
       DownloadcomponentComponent, FilemanagerComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CKEditorModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CKEditorModule, PdfViewerModule],
   providers: [FinanaceDetailsService,UploadDownloadServiceService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+platformBrowserDynamic().bootstrapModule(AppModule);

@@ -15,7 +15,7 @@ export class UploadcomponentComponent implements OnInit{
 
   @Input() public disabled: boolean;
   @Output() public uploadStatus: EventEmitter<ProgressStatus>;
-  @ViewChild('inputFile', {static: false}) inputFile: ElementRef;
+  @ViewChild('inputFile') inputFile: ElementRef;
  
   constructor(private service: UploadDownloadServiceService) {
     this.uploadStatus = new EventEmitter<ProgressStatus>();

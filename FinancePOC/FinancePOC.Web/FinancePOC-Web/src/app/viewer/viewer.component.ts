@@ -9,7 +9,7 @@ import { UploadAdapter } from '../shared/uploadadapter';
   styleUrls: ['./viewer.component.css']
 })
 export class ViewerComponent implements OnInit {
-  @ViewChild(PdfViewerComponent, {static:false}) private pdfComponent: PdfViewerComponent;
+  @ViewChild(PdfViewerComponent) private pdfComponent: PdfViewerComponent;
   pdfSrc: any;
 
   search(stringToSearch: string) {

@@ -20,6 +20,7 @@ export class ViewerComponent implements OnInit {
   public Editor = ClassicEditor ;
   public editorData = "<p>Hello world!</p>" ;
   constructor() { }
+  //PDF loader function
   onFileSelected() {
     let $img: any = document.querySelector('#file');
   
@@ -36,7 +37,7 @@ export class ViewerComponent implements OnInit {
 
   ngOnInit() {
   }
-
+//CKEditor loader function
   onReady(eventData) {
     eventData.plugins.get('FileRepository').createUploadAdapter = function (loader) {
       console.log(btoa(loader.file));

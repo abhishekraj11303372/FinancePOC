@@ -13,14 +13,16 @@ import { FilemanagerComponent } from './filemanager/filemanager.component';
 import { UploadDownloadServiceService } from './shared/upload-download-service.service';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { TinymceeditorComponent } from './tinymceeditor/tinymceeditor.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 
 @NgModule({
   declarations: [AppComponent,
      FinanaceDetailsComponent,
       ViewerComponent, UploadcomponentComponent, 
-      DownloadcomponentComponent, FilemanagerComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CKEditorModule, PdfViewerModule],
+      DownloadcomponentComponent, FilemanagerComponent, TinymceeditorComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CKEditorModule, PdfViewerModule, EditorModule],
   providers: [FinanaceDetailsService,UploadDownloadServiceService],
   bootstrap: [AppComponent],
 })

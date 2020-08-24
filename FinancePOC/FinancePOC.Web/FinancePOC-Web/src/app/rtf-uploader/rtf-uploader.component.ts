@@ -13,9 +13,11 @@ export class RtfUploaderComponent implements OnInit {
   @Output() public uploadStatus: EventEmitter<ProgressStatus>;
   @ViewChild('inputFile') inputFile: ElementRef;
   
+  public view = require('html-loader!../../assets/FinancePOCDotnetMembers.html');
+
   public Rtffiles: string[];
   public Htmlfiles: string[];
-  
+  //public view = require('htmlloader!E:\POC\FinancePOC\FinancePOC\FinancePOC.Web\FinancePOC-Web\src\assets\FinancePOCDotnetMembers.html'); 
   constructor(private service: UploadDownloadServiceService) { }
 
   ngOnInit() {

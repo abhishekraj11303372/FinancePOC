@@ -18,7 +18,8 @@ export class ViewerComponent implements OnInit {
     });
   }
   public Editor = ClassicEditor ;
-  public editorData = "<p>Hello world!</p>" ;
+  //public editorData = "<p>Hello world!</p>" ;
+  public editorData = require('html-loader!../../assets/FinancePOCDotnetMembers.html'); ;
   constructor() { }
   //PDF loader function
   onFileSelected() {

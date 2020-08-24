@@ -8,7 +8,8 @@ namespace RtfToHtml
 {
     public class Convert
     {
-        static void Main(string[] args)
+        //static void Main(string[] args)
+        public string ConvertToHtml()
         {
             // Add a reference to the NuGet package System.Text.Encoding.CodePages for .Net core only
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
@@ -22,6 +23,7 @@ namespace RtfToHtml
             File.WriteAllText(output, html);
 
             Console.WriteLine($"Done. Output file: {output}");
+            return output;
         }
     }
 }

@@ -1,0 +1,36 @@
+<h2>RTF Uploader</h2><hr>
+<h3>list of Rtf files :</h3>
+<div class="container">
+    <ul>
+        <li *ngFor="let file of Rtffiles">
+            <a>
+                {{file}}
+                <app-downloadcomponent [fileName]="file" (downloadStatus)="downloadStatus($event)"></app-downloadcomponent>
+            </a>
+        </li>
+    </ul>
+</div>   
+<hr><br>
+<h3>list of Html files :</h3>
+<div class="container">
+    <ul>
+        <li *ngFor="let file of Htmlfiles">
+            <a>
+                {{file}}
+                <app-downloadcomponent [fileName]="file" (downloadStatus)="downloadStatus($event)"></app-downloadcomponent>
+            </a>
+        </li>
+    </ul>
+</div> 
+<hr><br>
+<h3>RtfUpload</h3>
+<div class="container-upload">
+    <button class="btn" 
+    [disabled]="disabled" 
+    [ngClass]="{'disabled': disabled}" 
+    (click)="inputFile.click()"><i class="fa fa-upload"></i>
+        UPLOAD
+    </button>
+    <input name="file" id="file"(change)="uploadRtf($event)" type="file" #inputFile hidden>
+</div>
+<hr><br>

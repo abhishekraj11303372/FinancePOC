@@ -79,6 +79,26 @@ namespace FinancePOC.Api.Controllers
             }
             return Ok();
         }
+        
+        [HttpPost]
+        [Route("uploadRTF")]
+        public async Task<IActionResult> UploadRTF(IFormFile file)
+        {
+            var uploads = Path.Combine("E:/POC/FinancePOC/FinancePOC/RtfToHtml/Files/", "Rtf");
+            if (!Directory.Exists(uploads))
+            {
+                Directory.CreateDirectory(uploads);
+            }
+            if (file.Length > 0)
+            {
+                var filePath = Path.Combine(uploads, file.FileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await file.CopyToAsync(fileStream);
+                }
+            }
+            return Ok();
+        }
 
         [HttpGet]
         [Route("download")]
@@ -106,6 +126,44 @@ namespace FinancePOC.Api.Controllers
             var result = new List<string>();
 
             var uploads = Path.Combine(_hostingEnvironment.WebRootPath, "uploads");
+            if (Directory.Exists(uploads))
+            {
+                var provider = _hostingEnvironment.ContentRootFileProvider;
+                foreach (string fileName in Directory.GetFiles(uploads))
+                {
+                    var fileInfo = provider.GetFileInfo(fileName);
+                    result.Add(fileInfo.Name);
+                }
+            }
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [Route("getrtf")]
+        public IActionResult getrtf()   
+        {
+            var result = new List<string>();
+
+            var uploads = Path.Combine("E:/POC/FinancePOC/FinancePOC/RtfToHtml/Files/", "Rtf");
+            if (Directory.Exists(uploads))
+            {
+                var provider = _hostingEnvironment.ContentRootFileProvider;
+                foreach (string fileName in Directory.GetFiles(uploads))
+                {
+                    var fileInfo = provider.GetFileInfo(fileName);
+                    result.Add(fileInfo.Name);
+                }
+            }
+            return Ok(result);
+        }
+        
+        [HttpGet]
+        [Route("gethtml")]
+        public IActionResult gethtml()   
+        {
+            var result = new List<string>();
+
+            var uploads = Path.Combine("E:/POC/FinancePOC/FinancePOC/RtfToHtml/Files/", "html");
             if (Directory.Exists(uploads))
             {
                 var provider = _hostingEnvironment.ContentRootFileProvider;

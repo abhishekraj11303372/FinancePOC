@@ -15,13 +15,14 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { TinymceeditorComponent } from './tinymceeditor/tinymceeditor.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { RtfUploaderComponent } from './rtf-uploader/rtf-uploader.component';
 
 
 @NgModule({
   declarations: [AppComponent,
      FinanaceDetailsComponent,
       ViewerComponent, UploadcomponentComponent, 
-      DownloadcomponentComponent, FilemanagerComponent, TinymceeditorComponent],
+      DownloadcomponentComponent, FilemanagerComponent, TinymceeditorComponent, RtfUploaderComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, CKEditorModule, PdfViewerModule, EditorModule],
   providers: [FinanaceDetailsService,UploadDownloadServiceService],
   bootstrap: [AppComponent],

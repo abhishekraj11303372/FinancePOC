@@ -2,8 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Files\Rtf\~%24nancePOCDotnetMembers.rtf" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="RtfPipe" Version="1.0.7388.1242" />
@@ -12,6 +16,12 @@
 
   <ItemGroup>
     <Folder Include="Files\Html\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Files\Html\FinancePOCDotnetMembers.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

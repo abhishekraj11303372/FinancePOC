@@ -20,6 +20,7 @@ export class FilemanagerComponent implements OnInit {
  
   ngOnInit() {
     this.getFiles();
+    
   }
  
   private getFiles() {

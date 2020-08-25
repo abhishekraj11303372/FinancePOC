@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanacePOC.Domain.Core", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RTFStorage", "RTFStorage", "{832BEEF3-7CCB-48B1-9378-B845B95C6922}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RtfToHtml", "RtfToHtml\RtfToHtml.csproj", "{4C767AB7-0D55-4E83-A265-B9687D9A6B1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RtfToHtml", "RtfToHtml\RtfToHtml.csproj", "{4C767AB7-0D55-4E83-A265-B9687D9A6B1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

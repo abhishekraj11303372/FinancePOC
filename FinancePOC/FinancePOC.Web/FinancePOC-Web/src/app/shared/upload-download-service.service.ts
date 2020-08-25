@@ -35,7 +35,21 @@ export class UploadDownloadServiceService {
         responseType: 'blob'
       }));
   }
- 
+
+
+  public convertRtfFile(file: Blob): Observable<HttpEvent<void>> {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    return this.httpClient.request(new HttpRequest(
+      'PUT',
+      this.apiRtfUploadUrl,
+      formData,
+      {
+        reportProgress: true
+      }));
+  }
+
   public uploadFile(file: Blob): Observable<HttpEvent<void>> {
     const formData = new FormData();
     formData.append('file', file);
@@ -61,6 +75,8 @@ export class UploadDownloadServiceService {
         reportProgress: true
       }));
   }
+
+  //  );
  
   public getFiles(): Observable<string[]> {
     return this.httpClient.get<string[]>(this.apiFileUrl);

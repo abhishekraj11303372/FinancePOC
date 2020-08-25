@@ -111,6 +111,7 @@ namespace FinancePOC.Api.Controllers
             return StatusCode((int)HttpStatusCode.OK, convertToRtf);
         }
 
+
         [HttpGet]
         [Route("download")]
         public async Task<IActionResult> Download([FromQuery] string file)

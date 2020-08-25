@@ -19,7 +19,9 @@ export class RtfUploaderComponent implements OnInit {
   public Rtffiles: string[];
   public Htmlfiles: string[];
   //public view = require('htmlloader!E:\POC\FinancePOC\FinancePOC\FinancePOC.Web\FinancePOC-Web\src\assets\FinancePOCDotnetMembers.html'); 
-  constructor(private service: UploadDownloadServiceService) { }
+  constructor(private service: UploadDownloadServiceService) {
+    this.uploadStatus = new EventEmitter<ProgressStatus>();
+   }
 
   ngOnInit() {
     this.getRtfFiles();
@@ -43,7 +45,7 @@ export class RtfUploaderComponent implements OnInit {
     if (event.target.files && event.target.files.length > 0) {
       const file = event.target.files[0];
       this.uploadStatus.emit({status: ProgressStatusEnum.START});
-      this.service.uploadFile(file).subscribe(
+      this.service.uploadRtfFile(file).subscribe(
         data => {
           if (data) {
             switch (data.type) {

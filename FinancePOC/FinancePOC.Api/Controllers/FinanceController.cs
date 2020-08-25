@@ -87,7 +87,7 @@ namespace FinancePOC.Api.Controllers
         [Route("uploadRTF")]
         public async Task<IActionResult> UploadRTF(IFormFile file)
         {
-            var uploads = Path.Combine("E:/POC/FinancePOC/FinancePOC/RtfToHtml/Files/", "Rtf");
+            var uploads = Path.Combine("C:/Users/annu.kumari/Source/Repos/FinancePOC/FinancePOC/RtfToHtml/Files/", "Rtf");
             if (!Directory.Exists(uploads))
             {
                 Directory.CreateDirectory(uploads);
@@ -155,7 +155,7 @@ namespace FinancePOC.Api.Controllers
         {
             var result = new List<string>();
 
-            var uploads = Path.Combine("E:/POC/FinancePOC/FinancePOC/RtfToHtml/Files/", "Rtf");
+            var uploads = Path.Combine("C:/Users/annu.kumari/Source/Repos/FinancePOC/FinancePOC/RtfToHtml/Files/", "Rtf");
             if (Directory.Exists(uploads))
             {
                 var provider = _hostingEnvironment.ContentRootFileProvider;
@@ -174,7 +174,7 @@ namespace FinancePOC.Api.Controllers
         {
             var result = new List<string>();
 
-            var uploads = Path.Combine("E:/POC/FinancePOC/FinancePOC/RtfToHtml/Files/", "html");
+            var uploads = Path.Combine("C:/Users/annu.kumari/Source/Repos/FinancePOC/FinancePOC/RtfToHtml/Files/", "html");
             if (Directory.Exists(uploads))
             {
                 var provider = _hostingEnvironment.ContentRootFileProvider;

@@ -16,8 +16,10 @@ namespace RtfToHtml
 
             var location = Assembly.GetExecutingAssembly().Location;
             var contentRoot = Path.GetDirectoryName(location);
-            var input = Path.Combine(contentRoot, "../../../Files/Rtf/FinancePOCDotnetMembers1.rtf");
-            var output = Path.Combine(contentRoot, "../../../Files/Html/FinancePOCDotnetMembers1.html");
+            var input = Path.Combine(contentRoot, "E:/POC/FinancePOC/FinancePOC/RtfToHtml/Files/Rtf/FinancePOCDotnetMembers1.rtf");
+            //var input = Path.Combine(contentRoot, "../../../../Files/Rtf/FinancePOCDotnetMembers1.rtf");
+            var output = Path.Combine(contentRoot, "E:/POC/FinancePOC/FinancePOC/RtfToHtml/Files/Html/FinancePOCDotnetMembers1.html");
+           // var output = Path.Combine(contentRoot, "../../../../Files/Html/FinancePOCDotnetMembers1.html");
 
             var html = Rtf.ToHtml(File.ReadAllText(input));
             File.WriteAllText(output, html);

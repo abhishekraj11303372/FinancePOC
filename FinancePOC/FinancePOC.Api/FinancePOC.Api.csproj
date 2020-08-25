@@ -22,6 +22,7 @@
     <ProjectReference Include="..\DependencyContainer\FinancePOC.Infra.IoC.csproj" />
     <ProjectReference Include="..\FinanceDBContext\Finance.Infra.Data.csproj" />
     <ProjectReference Include="..\FinancePOC.Application\FinancePOC.Application.csproj" />
+    <ProjectReference Include="..\RtfToHtml\RtfToHtml.csproj" />
   </ItemGroup>
 
   <ItemGroup>

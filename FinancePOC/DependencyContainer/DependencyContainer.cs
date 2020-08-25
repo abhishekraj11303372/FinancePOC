@@ -6,7 +6,9 @@ using FinancePOC.Application.Services;
 using FinancePOC.Domain.Interfaces;
 using FinancePOC.Infra.Bus;
 using Microsoft.Extensions.DependencyInjection;
+using RtfToHtml;
 using System;
+using Convert = RtfToHtml.Convert;
 
 namespace FinancePOC.Infra.IoC
 {
@@ -23,6 +25,9 @@ namespace FinancePOC.Infra.IoC
             //Infra.Data Layer 
             services.AddScoped<IFinanceRepository, FinanceRepository>();
             services.AddScoped<FinanceDBContext>();
+
+            //Convert Layer
+            services.AddScoped<IConvert, Convert>();
         }
     }
 }

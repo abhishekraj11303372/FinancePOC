@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, ViewChild, EventEmitter, ElementRef }
 import { UploadDownloadServiceService } from '../shared/upload-download-service.service';
 import { ProgressStatus, ProgressStatusEnum } from '../shared/finanace-details.model';
 import { HttpEventType } from '@angular/common/http';
+import html from './file.html';
 
 @Component({
   selector: 'app-rtf-uploader',

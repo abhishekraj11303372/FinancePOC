@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
+using RtfToHtml;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,6 +22,7 @@ namespace FinancePOC.Api.Controllers
     {
         private readonly IFinanceService _financeService;
         private IHostingEnvironment _hostingEnvironment;
+        private IConvert _convert;
 
         //public FinanceController(IFinanceService financeService)
         //{
@@ -42,10 +44,11 @@ namespace FinancePOC.Api.Controllers
         //    _context = context;
         //}
 
-        public FinanceController(IFinanceService financeService, IHostingEnvironment hostingEnvironment)
+        public FinanceController(IFinanceService financeService, IHostingEnvironment hostingEnvironment, IConvert convert)
         {
             _financeService = financeService;
             _hostingEnvironment = hostingEnvironment;
+            _convert = convert;
         }
 
         //Get : /Finance
@@ -98,6 +101,14 @@ namespace FinancePOC.Api.Controllers
                 }
             }
             return Ok();
+        }
+
+        [HttpPut]
+        [Route("convertrtf")]
+        public IActionResult ConvertRtf()
+        {
+            var convertToRtf = _convert.ConvertToHtml();
+            return StatusCode((int)HttpStatusCode.OK, convertToRtf);
         }
 
         [HttpGet]

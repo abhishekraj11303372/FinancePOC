@@ -87,6 +87,7 @@ namespace FinancePOC.Api.Controllers
         [Route("uploadRTF")]
         public async Task<IActionResult> UploadRTF(IFormFile file)
         {
+            //var uploads = Path.Combine(_hostingEnvironment.WebRootPath, "rtf");
             var uploads = Path.Combine("C:/Users/annu.kumari/Source/Repos/FinancePOC/FinancePOC/RtfToHtml/Files/", "Rtf");
             if (!Directory.Exists(uploads))
             {
@@ -102,7 +103,7 @@ namespace FinancePOC.Api.Controllers
             }
             return Ok();
         }
-
+  
         [HttpPut]
         [Route("convertrtf")]
         public IActionResult ConvertRtf()
@@ -155,8 +156,8 @@ namespace FinancePOC.Api.Controllers
         public IActionResult getrtf()   
         {
             var result = new List<string>();
-
-            var uploads = Path.Combine("C:/Users/annu.kumari/Source/Repos/FinancePOC/FinancePOC/RtfToHtml/Files/", "Rtf");
+            //var uploads = Path.Combine(_hostingEnvironment.WebRootPath, "rtf");
+             var uploads = Path.Combine("C:/Users/annu.kumari/Source/Repos/FinancePOC/FinancePOC/RtfToHtml/Files/", "Rtf");
             if (Directory.Exists(uploads))
             {
                 var provider = _hostingEnvironment.ContentRootFileProvider;
@@ -174,8 +175,8 @@ namespace FinancePOC.Api.Controllers
         public IActionResult gethtml()   
         {
             var result = new List<string>();
-
-            var uploads = Path.Combine("C:/Users/annu.kumari/Source/Repos/FinancePOC/FinancePOC/RtfToHtml/Files/", "html");
+           // var uploads = Path.Combine(_hostingEnvironment.WebRootPath, "html");
+           var uploads = Path.Combine("C:/Users/annu.kumari/Source/Repos/FinancePOC/FinancePOC/RtfToHtml/Files/", "html");
             if (Directory.Exists(uploads))
             {
                 var provider = _hostingEnvironment.ContentRootFileProvider;
@@ -188,8 +189,7 @@ namespace FinancePOC.Api.Controllers
             return Ok(result);
         }
 
-
-        private string GetContentType(string path)
+       private string GetContentType(string path)
         {
             var provider = new FileExtensionContentTypeProvider();
             string contentType;

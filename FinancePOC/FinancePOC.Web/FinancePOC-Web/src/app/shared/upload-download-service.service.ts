@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpRequest, HttpEvent, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,6 +15,7 @@ export class UploadDownloadServiceService {
   private apiFileUrl: string;
   private apiRtfFileUrl: string;
   private apiHtmlFileUrl: string;
+  private apiConvertRtfUrl: string;
  
   constructor(private httpClient: HttpClient) {
     this.baseApiUrl = 'https://localhost:44390/Finance/';
@@ -22,7 +24,11 @@ export class UploadDownloadServiceService {
     this.apiRtfUploadUrl = this.baseApiUrl + 'uploadRTF';
     this.apiFileUrl = this.baseApiUrl + 'files';
     this.apiRtfFileUrl = this.baseApiUrl + 'getrtf';
-    this.apiHtmlFileUrl = this.baseApiUrl + 'gethtml';
+    this.apiConvertRtfUrl = this.baseApiUrl + 'convertrtf';
+
+  }
+  public viewFormFile() {
+    return this.httpClient.request(this.apiFileUrl, null, { observe: 'response' });
   }
 
   public downloadFile(file: string): Observable<HttpEvent<Blob>> {
@@ -36,21 +42,11 @@ export class UploadDownloadServiceService {
       }));
   }
 
-
-  public convertRtfFile(file: Blob): Observable<HttpEvent<void>> {
-    const formData = new FormData();
-    formData.append('file', file);
-
-    return this.httpClient.request(new HttpRequest(
-      'PUT',
-      this.apiRtfUploadUrl,
-      formData,
-      {
-        reportProgress: true
-      }));
+  public convertRtfFile() {
+    return this.httpClient.put(this.apiConvertRtfUrl, null, { observe: 'response' });
   }
 
-  public uploadFile(file: Blob): Observable<HttpEvent<void>> {
+ public uploadFile(file: Blob): Observable<HttpEvent<void>> {
     const formData = new FormData();
     formData.append('file', file);
  
@@ -75,8 +71,6 @@ export class UploadDownloadServiceService {
         reportProgress: true
       }));
   }
-
-  //  );
  
   public getFiles(): Observable<string[]> {
     return this.httpClient.get<string[]>(this.apiFileUrl);

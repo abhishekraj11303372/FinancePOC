@@ -16,13 +16,14 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { TinymceeditorComponent } from './tinymceeditor/tinymceeditor.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { RtfUploaderComponent } from './rtf-uploader/rtf-uploader.component';
+import { ViewComponentComponent } from './view-component/view-component.component';
 
 
 @NgModule({
   declarations: [AppComponent,
      FinanaceDetailsComponent,
       ViewerComponent, UploadcomponentComponent, 
-      DownloadcomponentComponent, FilemanagerComponent, TinymceeditorComponent, RtfUploaderComponent],
+      DownloadcomponentComponent, FilemanagerComponent, TinymceeditorComponent, RtfUploaderComponent, ViewComponentComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, CKEditorModule, PdfViewerModule, EditorModule],
   providers: [FinanaceDetailsService,UploadDownloadServiceService],
   bootstrap: [AppComponent],

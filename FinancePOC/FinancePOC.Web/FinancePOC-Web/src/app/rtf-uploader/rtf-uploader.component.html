@@ -7,12 +7,14 @@
       <a>
         {{file}}
         <app-downloadcomponent [fileName]="file" (downloadStatus)="downloadStatus($event)"></app-downloadcomponent>
+        <app-view-component (viewForm)="viewForms()"></app-view-component>
       </a>
     </li>
   </ul>
 </div>
 <hr>
 <br>
+
 <h3>list of Html files :</h3>
 <div class="container">
   <ul>
@@ -44,13 +46,9 @@
 <h3>RtfConvert</h3>
 <div class="container-upload">
   <button class="btn"
-          [disabled]="disabled"
-          [ngClass]="{'disabled': disabled}"
-          (click)="inputFile.click()">
-    <i class="fa fa-upload"></i>
+          (click)="ConvertRtf()">
     ConvertRtf
   </button>
-  <input name="file" id="file" (change)="ConvertRtf($event)" type="file" #inputFile hidden>
 </div>
 <hr>
 <br>

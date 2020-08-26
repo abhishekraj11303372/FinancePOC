@@ -1,1 +1,12 @@
-<ckeditor [editor]="Editor" data="<p>Hello world!</p>"></ckeditor> 
+<h3>With Controls</h3>
+<ckeditor [editor]="Editor" [data]="editorData" (ready)="onReady($event)"></ckeditor> <br>
+<h3>Without Controls</h3>
+<ckeditor [editor]="Editor" [data]="editorData" [config]="{ toolbar: [] }"></ckeditor> <br>
+<h3>Without Controls and disabled editing</h3>
+<ckeditor [editor]="Editor" [data]="editorData" (ready)="onReady($event)" disabled="true" [config]="{ toolbar: [] }"></ckeditor> 
+<hr><h3>Pdf Viewer</h3>
+<pdf-viewer [src]="pdfSrc" 
+              [render-text]="true"
+              style="display: block;"
+  ></pdf-viewer>
+  <input (change)="onFileSelected()" type="file" id="file">

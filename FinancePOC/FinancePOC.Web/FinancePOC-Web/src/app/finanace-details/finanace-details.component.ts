@@ -8,7 +8,7 @@ import { FinanaceDetails } from '../shared/finanace-details.model';
   styleUrls: ["./finanace-details.component.css"],
 })
 export class FinanaceDetailsComponent implements OnInit {
-  constructor(private service: FinanaceDetailsService) {}
+  constructor(public service: FinanaceDetailsService) {}
 
   ngOnInit() {
     this.service.refreshList();

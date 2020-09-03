@@ -1,4 +1,5 @@
 <h2>RTF Uploader</h2>
+
 <hr>
 <h3>list of Rtf files :</h3>
 <div class="container">
@@ -13,6 +14,7 @@
 </div>
 <hr>
 <br>
+
 <h3>list of Html files :</h3>
 <div class="container">
   <ul>
@@ -41,4 +43,15 @@
 <hr>
 <br>
 
-<div [innerHtml]="view"></div>
+<h2>Select the uploaded file to view :</h2>
+<select>
+  <option *ngFor="let view of Htmlfiles" [value]="view">
+    {{view}}
+  </option>
+</select>
+<div class="card w-75">
+  <div class="card-body">
+  <div [innerHtml]="view"></div>
+</div>
+</div>
+

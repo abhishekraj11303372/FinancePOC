@@ -21,7 +21,7 @@ namespace RtfToHtml
             var html = Rtf.ToHtml(File.ReadAllText(input));
             File.WriteAllText(output, html);
 
-            Console.WriteLine($"Done. Output file: {output}");
+            //Console.WriteLine($"Done. Output file: {output}");
             return output;
         }
     }

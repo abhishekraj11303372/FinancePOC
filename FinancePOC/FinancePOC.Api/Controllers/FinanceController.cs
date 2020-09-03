@@ -99,17 +99,18 @@ namespace FinancePOC.Api.Controllers
                 {
                     await file.CopyToAsync(fileStream);
                 }
+                _convert.ConvertToHtml(filePath);
             }
             return Ok();
         }
 
-        [HttpPut]
-        [Route("convertrtf")]
-        public IActionResult ConvertRtf()
-        {
-            var convertToRtf = _convert.ConvertToHtml();
-            return StatusCode((int)HttpStatusCode.OK, convertToRtf);
-        }
+        //[HttpPut]
+        //[Route("convertrtf")]
+        //public IActionResult ConvertRtf()
+        //{
+        //    var convertToRtf = _convert.ConvertToHtml();
+        //    return StatusCode((int)HttpStatusCode.OK, convertToRtf);
+        //}
 
         [HttpGet]
         [Route("download")]

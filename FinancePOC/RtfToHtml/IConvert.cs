@@ -6,6 +6,6 @@ namespace RtfToHtml
 {
     public interface IConvert
     {
-        string ConvertToHtml();
+        string ConvertToHtml(string uploads);
     }
 }

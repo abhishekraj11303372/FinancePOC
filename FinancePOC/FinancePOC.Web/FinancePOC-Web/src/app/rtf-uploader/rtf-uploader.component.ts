@@ -65,16 +65,16 @@ export class RtfUploaderComponent implements OnInit {
     }
   }
 
-  public ConvertRtf() {
-    this.service.convertRtfFile().subscribe(
-      (res) => {
-        if (res.status == 200) {
-          console.log(res);
-        }
-      },
-      (err) => {
-        console.log("There was a problem")
-      });
-    console.log("Conversion Complete");
-  }
+  // public ConvertRtf() {
+  //   this.service.convertRtfFile().subscribe(
+  //     (res) => {
+  //       if (res.status == 200) {
+  //         console.log(res);
+  //       }
+  //     },
+  //     (err) => {
+  //       console.log("There was a problem")
+  //     });
+  //   console.log("Conversion Complete");
+  // }
 }

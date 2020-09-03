@@ -87,7 +87,7 @@ namespace FinancePOC.Api.Controllers
         [Route("uploadRTF")]
         public async Task<IActionResult> UploadRTF(IFormFile file)
         {
-            var uploads = Path.Combine("E:/POC/FinancePOC/FinancePOC/RtfToHtml/Files/", "Rtf");
+            var uploads = Path.Combine("../RtfToHtml/Files/", "Rtf");
             if (!Directory.Exists(uploads))
             {
                 Directory.CreateDirectory(uploads);

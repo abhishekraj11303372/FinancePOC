@@ -1,21 +1,23 @@
-import { Component } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { Component, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { MediaMatcher} from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-nav-main',
   templateUrl: './nav-main.component.html',
   styleUrls: ['./nav-main.component.css']
 })
-export class NavMainComponent {
+export class NavMainComponent implements OnDestroy{
+  mobileQuery: MediaQueryList;
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    );
+    private _mobileQueryListener: () => void;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
-
+    constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+      this.mobileQuery = media.matchMedia('(max-width: 600px)');
+      this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+      this.mobileQuery.addListener(this._mobileQueryListener);
+    }
+  
+  ngOnDestroy(): void {
+    this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
 }

@@ -1,8 +1,9 @@
+<div class="container">
 <h2>RTF Uploader</h2>
 
-<hr>
+
 <h3>list of Rtf files :</h3>
-<div class="container">
+<div class="rtflist">
   <ul>
     <li *ngFor="let file of Rtffiles">
       <a>
@@ -12,11 +13,11 @@
     </li>
   </ul>
 </div>
-<hr>
+
 <br>
 
 <h3>list of Html files :</h3>
-<div class="container">
+<div class="htmllist">
   <ul>
     <li *ngFor="let file of Htmlfiles">
       <a>
@@ -26,7 +27,7 @@
     </li>
   </ul>
 </div>
-<hr>
+
 <br>
 
 <h3>RtfUpload</h3>
@@ -40,7 +41,7 @@
   </button>
   <input name="file" id="file" (change)="uploadRtf($event)" type="file" #inputFile hidden>
 </div>
-<hr>
+
 <br>
 
 <h2>Select the uploaded file to view :</h2>
@@ -55,4 +56,4 @@
 </div>
 </div>
 <br>
-
+</div>

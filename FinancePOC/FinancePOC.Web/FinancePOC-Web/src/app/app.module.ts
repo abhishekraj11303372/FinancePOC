@@ -16,14 +16,22 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { TinymceeditorComponent } from './tinymceeditor/tinymceeditor.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { RtfUploaderComponent } from './rtf-uploader/rtf-uploader.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavMainComponent } from './nav-main/nav-main.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
   declarations: [AppComponent,
      FinanaceDetailsComponent,
       ViewerComponent, UploadcomponentComponent, 
-      DownloadcomponentComponent, FilemanagerComponent, TinymceeditorComponent, RtfUploaderComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CKEditorModule, PdfViewerModule, EditorModule],
+      DownloadcomponentComponent, FilemanagerComponent, TinymceeditorComponent, RtfUploaderComponent, NavMainComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CKEditorModule, PdfViewerModule, EditorModule, BrowserAnimationsModule, LayoutModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule],
   providers: [FinanaceDetailsService,UploadDownloadServiceService],
   bootstrap: [AppComponent],
 })

@@ -42,3 +42,8 @@ a {
   top: 0;
   z-index: 1;
 }
+
+.mat-nav-list .mat-icon {
+  margin-right: 5px;
+  color: rgb(24, 88, 206);
+}

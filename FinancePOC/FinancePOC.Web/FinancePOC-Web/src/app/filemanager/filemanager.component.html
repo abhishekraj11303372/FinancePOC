@@ -1,6 +1,6 @@
 <div class="container">
 <app-uploadcomponent (uploadStatus)="uploadStatus($event)"></app-uploadcomponent>
-
+    <div class="upload-list">
         <h2>File List</h2>
         <p *ngIf="showProgress"> progress <strong>{{percentage}}%</strong></p>
     
@@ -13,6 +13,6 @@
                     </a>
                 </li>
             </ul>
-
+    </div>
 </div>  
 

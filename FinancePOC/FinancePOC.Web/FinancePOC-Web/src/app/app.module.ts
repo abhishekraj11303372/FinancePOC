@@ -25,13 +25,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [AppComponent,
      FinanaceDetailsComponent,
       ViewerComponent, UploadcomponentComponent, 
-      DownloadcomponentComponent, FilemanagerComponent, TinymceeditorComponent, RtfUploaderComponent, NavMainComponent, WelcomeComponent],
+      DownloadcomponentComponent, FilemanagerComponent, TinymceeditorComponent, RtfUploaderComponent, NavMainComponent, WelcomeComponent, LoginComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, CKEditorModule, PdfViewerModule, EditorModule, BrowserAnimationsModule, LayoutModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule],
   providers: [FinanaceDetailsService,UploadDownloadServiceService],
   bootstrap: [AppComponent],

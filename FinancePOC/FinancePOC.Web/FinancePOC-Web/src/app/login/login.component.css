@@ -264,3 +264,8 @@ html {
   img {
       margin-bottom: 10px;
   }
+
+  .example-app-name {
+    margin: 10px;
+    color: #56baed;
+  }

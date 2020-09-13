@@ -1,3 +1,4 @@
+<div class="container">
 <h3>With Controls</h3>
 <ckeditor [editor]="Editor" [data]="editorData" (ready)="onReady($event)"></ckeditor> <br>
 <h3>Without Controls</h3>
@@ -10,3 +11,4 @@
               style="display: block;"
   ></pdf-viewer>
   <input (change)="onFileSelected()" type="file" id="file">
+</div>

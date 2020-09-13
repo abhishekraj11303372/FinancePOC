@@ -87,7 +87,7 @@ namespace FinancePOC.Api.Controllers
         [Route("uploadRTF")]
         public async Task<IActionResult> UploadRTF(IFormFile file)
         {
-            var uploads = Path.Combine("E:/POC/FinancePOC/FinancePOC/RtfToHtml/Files/", "Rtf");
+            var uploads = Path.Combine("../RtfToHtml/Files/", "Rtf");
             if (!Directory.Exists(uploads))
             {
                 Directory.CreateDirectory(uploads);
@@ -99,17 +99,18 @@ namespace FinancePOC.Api.Controllers
                 {
                     await file.CopyToAsync(fileStream);
                 }
+                _convert.ConvertToHtml(filePath);
             }
             return Ok();
         }
 
-        [HttpPut]
-        [Route("convertrtf")]
-        public IActionResult ConvertRtf()
-        {
-            var convertToRtf = _convert.ConvertToHtml();
-            return StatusCode((int)HttpStatusCode.OK, convertToRtf);
-        }
+        //[HttpPut]
+        //[Route("convertrtf")]
+        //public IActionResult ConvertRtf()
+        //{
+        //    var convertToRtf = _convert.ConvertToHtml();
+        //    return StatusCode((int)HttpStatusCode.OK, convertToRtf);
+        //}
 
         [HttpGet]
         [Route("download")]

@@ -6,9 +6,13 @@ import { FilemanagerComponent } from './filemanager/filemanager.component';
 import { TinymceeditorComponent } from './tinymceeditor/tinymceeditor.component';
 import { RtfUploaderComponent } from './rtf-uploader/rtf-uploader.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { LoginComponent } from './login/login.component';
+import { NavMainComponent } from './nav-main/nav-main.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'prefix', redirectTo: 'welcome' },
+  { path: 'login', component: LoginComponent },
+  { path: 'main', component: NavMainComponent },
   { path: 'welcome', component: WelcomeComponent },
   { path: 'rtfuploader', component: RtfUploaderComponent },
   { path: 'viewer', component: ViewerComponent },

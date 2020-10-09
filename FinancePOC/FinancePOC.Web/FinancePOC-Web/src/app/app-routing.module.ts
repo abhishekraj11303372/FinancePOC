@@ -1,28 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ViewerComponent } from './viewer/viewer.component';
-import { FinanaceDetailsComponent } from './finanace-details/finanace-details.component';
-import { FilemanagerComponent } from './filemanager/filemanager.component';
-import { TinymceeditorComponent } from './tinymceeditor/tinymceeditor.component';
-import { RtfUploaderComponent } from './rtf-uploader/rtf-uploader.component';
-import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
-import { NavMainComponent } from './nav-main/nav-main.component';
 
-const routes: Routes = [
-  { path: '', pathMatch: 'prefix', redirectTo: 'welcome' },
+const routes: Routes = [ 
+  {
+    path: 'main',
+    loadChildren:() => import('./dashboard/home.module').then((m) => m.HomeModule),
+  } ,
   { path: 'login', component: LoginComponent },
-  { path: 'main', component: NavMainComponent },
-  { path: 'welcome', component: WelcomeComponent },
-  { path: 'rtfuploader', component: RtfUploaderComponent },
-  { path: 'viewer', component: ViewerComponent },
-  { path: 'tinymce', component: TinymceeditorComponent },
-  { path: 'filemanager', component: FilemanagerComponent },
-  { path: 'finance', component: FinanaceDetailsComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**',  redirectTo: '/dashboard/main' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

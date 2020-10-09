@@ -13,7 +13,7 @@ export class RtfUploaderComponent implements OnInit {
   @Output() public uploadStatus: EventEmitter<ProgressStatus>;
   @ViewChild('inputFile') inputFile: ElementRef;
 
-  public view = require('html-loader!../../assets/FinancePOCDotnetMembers.html');
+  public view = require('html-loader!../../../assets/FinancePOCDotnetMembers.html');
 
   public Rtffiles: string[];
   public Htmlfiles: string[];

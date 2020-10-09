@@ -2,6 +2,8 @@
   <mat-toolbar color="primary" class="example-toolbar">
     <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
     <a class="example-app-name" routerLink="welcome" routerLinkActive="active">FinancePOC</a>
+    <a class="logout mr-2" routerLink="/login" routerLinkActive="active">Logout</a>
+    <mat-icon class="logout-icon" routerLink="/login" routerLinkActive="active">logout</mat-icon>
   </mat-toolbar>
 <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
   <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"

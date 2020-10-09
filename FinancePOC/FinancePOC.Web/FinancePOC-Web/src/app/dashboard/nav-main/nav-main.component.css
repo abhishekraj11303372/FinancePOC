@@ -1,6 +1,7 @@
 .example-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -13,6 +14,16 @@
   /* Make sure the toolbar will stay on top of the content as it scrolls past. */
   z-index: 2;
 }
+
+.logout {
+  position: relative;
+  margin-left: 80%;   
+}
+
+/* .logout-icon {
+  position: relative;
+  margin-left: 90%;   
+} */
 
 /* h1.example-app-name {
   margin-left: 8px;
@@ -47,3 +58,9 @@ a {
   margin-right: 5px;
   color: rgb(24, 88, 206);
 }
+
+.mat-icon {
+  outline:none !important;  
+  cursor: pointer;
+}
+
